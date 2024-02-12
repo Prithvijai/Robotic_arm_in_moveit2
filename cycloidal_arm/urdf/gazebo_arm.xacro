@@ -42,4 +42,12 @@
     <mu2>0.5</mu2>
     <selfCollide>false</selfCollide>
 </gazebo>
+
+<gazebo reference="camera">
+    <material>Gazebo/Red</material>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <selfCollide>false</selfCollide>
+</gazebo>
+
 </robot>

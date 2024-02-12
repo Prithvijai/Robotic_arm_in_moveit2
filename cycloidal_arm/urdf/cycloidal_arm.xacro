@@ -206,7 +206,8 @@
 </joint>
 
 <!-- <xacro:include filename="$(find cycloidal_arm)/urdf/cycloidal_arm.trans" /> -->
-<xacro:include filename="$(find cycloidal_arm)/urdf/arm_gazebo.xacro" />
-<xacro:include filename="$(find cycloidal_arm)/urdf/arm_trans.xacro" />
+<xacro:include filename="$(find cycloidal_arm)/urdf/gazebo_arm.xacro" />
+<xacro:include filename="$(find cycloidal_arm)/urdf/trans_arm.xacro" />
 <xacro:include filename="$(find cycloidal_arm)/urdf/camera.xacro" />   
+<xacro:include filename="$(find cycloidal_arm)/urdf/ros2_control.xacro"/>
 </robot>
