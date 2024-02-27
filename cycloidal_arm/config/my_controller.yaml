@@ -9,24 +9,24 @@ controller_manager:
 
 
     joint_trajectory_controller:
-      type: joint_trajectory_controller/JointTrajectoryControlle
+      type: joint_trajectory_controller/JointTrajectoryController
   
 
 joint_trajectory_controller:
   ros__parameters:
     joints:
-      - joint1
-      - joint2
-      - joint3
-      - joint4
-      - joint5
+      - Revolute_1
+      - Revolute_2
+      - Revolute_3
+      - Revolute_4
+      - Revolute_5
 
     write_op_modes:
-      - joint1
-      - joint2
-      - joint3
-      - joint4
-      - joint5
+      - Revolute_1
+      - Revolute_2
+      - Revolute_3
+      - Revolute_4
+      - Revolute_5
     
     interface_name: position
 
