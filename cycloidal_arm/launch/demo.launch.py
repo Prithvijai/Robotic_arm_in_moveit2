@@ -64,30 +64,15 @@ def generate_launch_description():
         ],
         output='screen'
     )
-    load_joint_state_broadcaster = ExecuteProcess(
-										cmd=['ros2', 'control', 'load_controller', '--set-state', 'configured','joint_state_broadcaster'],
-										output='screen')
-    
-    start_joint_state_broadcaster = ExecuteProcess(
-										cmd=['ros2', 'control', 'load_controller', '--set-state', 'active','joint_state_broadcaster'],
-										output='screen')
-    
-    load_joint_trajectory_controller = ExecuteProcess( 
-	 								cmd=['ros2', 'control', 'load_controller', '--set-state', 'configured', 'joint_trajectory_controller'], 
-	 								output='screen')
-
-    start_joint_trajectory_controller = ExecuteProcess(
-	 								cmd=['ros2', 'control', 'load_controller', '--set-state', 'active','joint_trajectory_controller'],
-	 								output='screen')
-
+    spawn_all_controller =  ExecuteProcess(
+                                    cmd=['ros2', 'run', 'controller_manager','spawner','joint_state_broadcaster' ,'joint_trajectory_controller'],
+                                    output='screen')
     return LaunchDescription([
         robot_state_publisher_node,
         joint_state_publisher_node,
         gazebo_server,
         gazebo_client,
         urdf_spawn_node,
-        load_joint_state_broadcaster,
-        load_joint_trajectory_controller,
-        # start_joint_state_broadcaster,
-        # start_joint_trajectory_controller
+        spawn_all_controller,
+        
     ])
