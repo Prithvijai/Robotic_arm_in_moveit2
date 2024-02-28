@@ -6,9 +6,9 @@
     <xacro:include filename="$(find cycloidal_arm)/urdf/cycloidal_arm.xacro" />
 
     <!-- Import control_xacro -->
-    <xacro:include filename="cycloidal_arm.ros2_control.xacro" />
+    <!-- <xacro:include filename="cycloidal_arm.ros2_control.xacro" /> -->
 
 
-    <xacro:cycloidal_arm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    <!-- <xacro:cycloidal_arm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/> -->
 
 </robot>

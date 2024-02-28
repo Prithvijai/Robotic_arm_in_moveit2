@@ -60,6 +60,7 @@
         <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
         <robotNamespace>/</robotNamespace>
         <parameters>$(find cycloidal_arm)/config/my_controller.yaml</parameters>
+        <!-- <parameters>$(find cycloidal_arm_moveit_config)/config/ros2_controllers.yaml</parameters> -->
          
     </plugin>
 </gazebo>

@@ -70,7 +70,7 @@ def generate_launch_description():
                     output='screen'
     )
     spawn_all_controller =  ExecuteProcess(
-                                    cmd=['ros2', 'run', 'controller_manager','spawner','joint_state_broadcaster' ,'joint_trajectory_controller'],
+                                    cmd=['ros2', 'run', 'controller_manager','spawner','joint_state_broadcaster' ,'arm_group_controller'],
                                     output='screen')
     return LaunchDescription([
         robot_state_publisher_node,

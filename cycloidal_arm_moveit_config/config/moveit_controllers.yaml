@@ -4,9 +4,9 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 
 moveit_simple_controller_manager:
   controller_names:
-    - cycloidal_arm_controller
+    - arm_group_controller
 
-  cycloidal_arm_controller:
+  arm_group_controller:
     type: FollowJointTrajectory
     action_ns: follow_joint_trajectory
     default: true
@@ -16,5 +16,3 @@ moveit_simple_controller_manager:
       - Revolute_3
       - Revolute_4
       - Revolute_5
-    action_ns: follow_joint_trajectory
-    default: true
