@@ -31,7 +31,7 @@ def generate_launch_description():
         executable='joint_state_publisher',
         name='joint_state_publisher'
     )
-
+    gazebo_param_file =os.path.join(get_package_share_directory('cycloidal_arm'),'config','gazebo_param.yaml')
     gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
@@ -41,7 +41,8 @@ def generate_launch_description():
             ])
         ]),
         launch_arguments={
-            'pause': 'true'
+            'pause': 'false',
+            'extra_gazebo_args': '--ros-args --param-file' + gazebo_param_file
         }.items()
     )
 
@@ -64,6 +65,10 @@ def generate_launch_description():
         ],
         output='screen'
     )
+    moveit_launch = ExecuteProcess(
+                    cmd=['ros2','launch','cycloidal_arm_moveit_config','demo.launch.py'],
+                    output='screen'
+    )
     spawn_all_controller =  ExecuteProcess(
                                     cmd=['ros2', 'run', 'controller_manager','spawner','joint_state_broadcaster' ,'joint_trajectory_controller'],
                                     output='screen')
@@ -73,6 +78,7 @@ def generate_launch_description():
         gazebo_server,
         gazebo_client,
         urdf_spawn_node,
+        # moveit_launch,
         spawn_all_controller,
         
     ])
